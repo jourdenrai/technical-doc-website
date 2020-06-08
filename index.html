@@ -1,0 +1,160 @@
+<head><link href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    </head>
+<body>
+<div id="mySidebar" class="sidebar" ><nav id="navbar">
+  <div class="text-center">
+    <a href="#"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/330px-Node.js_logo.svg.png" style="width:90%;padding-bottom:15px;padding-right:15px;"></a>
+  </div><header style="visibility:hidden;">Setting up a Node Devlopment Environment</header>
+  <a class="nav-link" href="#Introduction">Introduction</a>
+  <a class="nav-link" href="#Installing_Node.js">Installing Node.js</a>
+  <a class="nav-link" href="#npm">npm</a>
+  <a class="nav-link" href="#Express.js">Express.js</a>
+  <a class="nav-link" href="#Hello_World!">Hello World!</a>
+  <a class="nav-link" href="#Conclusion">Conclusion</a>
+</div>
+  </nav>
+<main id="main-doc">
+  <div id="main">
+    <h1><b>Setting up a Node Development Environment</b></h1>
+
+    <section class="main-section" id="Introduction">
+      <header>
+        <br><br>
+        <h3><b>Introduction</b></h3>
+      </header>
+      <p><li><u>Node</u> is an open-source, cross-platform, server environment.</p></li>
+      <p><li>It allows you to run JavaScript code outside of a web browser</p></li>
+      <p><li>It has some great features that make it an attractive choice for building server-side application middle tiers, including web servers and web services for platform APIs.</li></p>
+
+    </section>
+    <br>
+    <section class="main-section" id="Installing_Node.js">
+      <header>
+        <h3><b>Installing Node.js</b></h3>
+      </header>
+      <p>Before we get going, let's make sure you have node installed.
+      </p>
+      <h4>Windows or macOS</h4>
+      <p>Go to the node website <a href="https://nodejs.org/en/" target="_blank" style="color:#7ab561">here</a> and download the "Recommended for most users" installer.</p>
+      <h4>Ubuntu 18.04</h4>
+      <p>The easiest way to install the most recent LTS version of Node 10.x is to use the package manager to get it from the Ubuntu binary distributions repository.</p>
+      <p>Run these two commands in your terminal.</p>
+
+      <div id="codeBlock">
+        <code>
+          &emsp; curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -<br>
+          &emsp; sudo apt-get install -y nodejs
+        </code>
+      </div>
+    </section>
+    <br>
+    <section class="main-section" id="npm">
+      <header>
+        <h3><b>npm</b></h3>
+      </header>
+      <p><li><u>npm</u> is a package manager for the JavaScript programming language.</p></li>
+      <p><li>You can manually use npm to separately fetch each needed package.</p></li>
+  <p><li>This isthe most important tool for working with Node.js applications.</p></li>
+      <p>Use the <b>npm init</b> command to create a <b>package.json</b> file for your application.</p>
+      <div id="codeBlock">
+        <code>
+          &emsp; <span id="yellow">npm</span> init
+        </code>
+      </div><br>
+      <p><u>package.json</u> is used to give information to npm that allows it to identify the project as well as handle the project's dependencies.</p>
+      <p>Your terminal will prompt you to enter values for the package.json file. <br>Here's an example: </p>
+      <div id="codeBlock">
+        <code>
+          &emsp; {<br>
+          &emsp; &emsp;"name": <span id="green">"myapp",</span><br>
+          &emsp; &emsp;"version": <span id="green">"1.0.0",</span><br>
+          &emsp; &emsp;"description": <span id="green">"",</span><br>
+          &emsp; &emsp;"main": <span id="green">"server.js",</span><br>
+          &emsp; &emsp;"scripts": &emsp;{<br>
+          &emsp; &emsp;"test": <span id="green">"echo \"Error: no test specified\" && exit 1"</span>
+          <br>&emsp;&emsp;&emsp;},<br>
+          &emsp; &emsp;"author": <span id="green">"",</span><br>
+          &emsp; &emsp;"license": <span id="green">"ISC"</span><br>
+          &emsp; &emsp;}
+        </code>
+
+      </div><br>
+      <p>Great! You can now use npm to install whatever packages you want!</p>
+    </section>
+    <br>
+    <section class="main-section" id="Express.js">
+      <header>
+        <h3><b>Express.js</b></h3>
+      </header>
+      <p><li><u>Express</u> is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p></li>
+      <p>The hard part is over, to install Express with npm enter this command</p>
+
+      <div id="codeBlock">
+        <code>
+          &emsp; <span id="yellow">npm</span> install express --save
+        </code>
+      </div><br>
+      <p>See that wasn't soo bad!</p>
+      <p>Node & express are so easy enough that you can get a basic web server to serve "Hello World!" in about 12 lines of code</p>
+      <p>Create a new file called <span id="green">server.js</span></p>
+      <p>Add this inside your new file: </p>
+      <div id="codeBlock">
+        <code>
+          &emsp;<span id="blue">const</span> express = <span id="green">require</span></span>(<span id="yellow">'express'</span>);<br>
+          <br>
+          &emsp;<span id="blue">const</span> app = <span id="green">express</span>();<br>
+          &emsp;<span id="blue">const</span> port = <span id="green">process.env.PORT || 3000</span>;<br><br>
+
+          
+
+          &emsp;app.<span id="green">listen</span>(port, () => {<br>
+          &emsp;console.<span id="green">log</span>(<span id="yellow">`listening on port ${ port }`</span>);<br>
+          &emsp;});<br>
+        </code>
+      </div><br>
+    <p>Save your file and run your express app by typing this command: </p>
+    <div id="codeBlock">
+      <code>
+        <p>&emsp;<span id="yellow">node</span> server.js</p>
+      </code>
+    </div>
+    <p>You should see this in the console: </p>
+    <div id="codeBlock">
+      <code>
+        &emsp;listening on port 3000
+      </code>
+    </div>
+    <br>
+    <p>Tada! Your server is now up and running!</p>
+    <br>
+</section>
+
+    <section class="main-section" id="Hello_World!"><header><h3><b>Hello World!</b></h3></header>
+      <p>Let's serve a simple "Hello World!" to your web server page.</p>
+      <p>Create an<span id="code"> app.<span id="green">get</span></span> function above your <span id="code">app.<span id="green">listen</span></span> function.</p>
+      <div id="codeBlock">
+        <code>
+          &emsp;app.<span id="green">get</span>('/', (req, res) => {<br>
+          &emsp;res.<span id="green">send</span>(<span id="yellow">"Hello, world!"</span>);<br>
+          &emsp;});
+        </code>
+      </div><br>
+      <p>Save your file and open up a browser and type <b>localhost:3000</b></p>
+      <p>You should now see "Hello World!" on your web server page</p>
+      <br>
+</section>
+
+    <section class="main-section"id="Conclusion"><header><h3><b>Conclusion</h3></b></header>
+        <p>You now have a Node development environment up and running on your computer that can be used for creating Express web applications. You've also seen how npm can be used to import Express into an application.</p>
+        <p>We’ve only just scratched the surface of Node and Express. There’s a lot more to learn about, including session management, token authentication, API design, etc…</p>
+        <p>For a full tutorial of Node.js click <a href="https://www.w3schools.com/nodejs/" target="_blank"><span id="green">here</span></a>.<p>
+      </section>
+<br><br>
+
+</main>
+<script>
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+</script>
+</body>

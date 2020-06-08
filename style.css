@@ -1,0 +1,75 @@
+body{
+    background-color: black;
+    color: grey;
+    font-family: 'News Cycle', sans-serif;
+  }
+  #codeBlock{
+    background-color: #111;
+  }
+  #code{
+    color: #A9A9A9;
+    font-family: 'Source Code Pro', monospace;
+  }
+  code{
+    color: #A9A9A9;
+    font-family: 'Source Code Pro', monospace;
+  }
+  h1{
+    color:#7ab561;
+  }
+  #plus{
+    color:white;
+    font-size: 50px;
+  }
+  /* The sidebar menu */
+  .sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 30px; /* Place content 30px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: grey;
+    display: block;
+    transition: 0.3s;
+  }
+  #red{
+    color: red;
+  }
+  #blue{
+    color: blue;
+  }
+  #yellow{
+    color: yellow;
+  }
+  #green{
+    color: #7ab561;
+  }
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+    padding-left: 50px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
